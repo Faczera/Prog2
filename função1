@@ -1,0 +1,14 @@
+//Aluno Vitor de Souza Luiz - Unilasalle 
+#include <stdio.h>
+int boan()
+
+{
+    printf("Boa noite");
+    return;
+}
+
+int main()
+{
+    boan();
+    return 0;
+}
