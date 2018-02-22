@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void tst();
+void soma(int num1, int num2);
+
+int main ()
+{
+    tst();
+    soma(7, 8);
+}
+
+
+void tst()
+{
+    printf("\nOlamigos");
+    printf("\nOlamigos");
+    printf("\nOlamigos");
+    printf("\nOlamigos");
+
+}
+
+void soma(int num1, int num2)
+{
+    int resultado;
+    resultado = num1 + num2;
+
+    printf("\nO resultado da soma eh:%d", resultado);
+}
