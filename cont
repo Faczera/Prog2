@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void contagem(int ini, int fim);
+
+int main ()
+{
+    contagem(10, 5);
+    contagem(10, 2);
+    contagem(10, 7);
+
+}
+
+
+void contagem(int ini, int fim)
+{
+    int i;
+    for(i=ini;i>fim;i--)
+
+
+
+        printf("\n%d", i);
+
+
+
+}
