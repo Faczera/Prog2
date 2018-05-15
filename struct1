@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+struct reg_ponto
+{
+  float x;
+  float y;
+
+};
+
+void lerponto(struct reg_ponto *p)
+{
+    printf("\nEntre com o ponto X:");
+    scanf("%f", &p->x);
+
+    printf("\nEntre com o ponto Y:");
+    scanf("%f", &p->y);
+
+}
+
+void imprimeponto(struct reg_ponto p)
+{
+    printf("Ponto X: %d , Ponto Y: %d",p.x, p.y);
+}
+
+int main()
+{
+    struct reg_ponto ponto;
+
+    lerponto(&ponto);
+    imprimeponto(&ponto);
+
+}
