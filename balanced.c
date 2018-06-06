@@ -4,6 +4,12 @@ int main()
 {
 
     char linha1[100];
+#include <stdio.h>
+
+int main()
+{
+
+    char linha1[100];
     char arq1[100];
     char arq2[100];
     char linha2[100];
@@ -31,16 +37,21 @@ int main()
 
     else
     {
-        while(fgets(linha1, 100,open1)!=NULL || fgets(linha2, 100 , open2)!=NULL)
+        while(fgets(linha1, 100,open1)!=NULL)
         {
-            printf("%s\n",linha1);
+            printf("\n%s\t",linha1);
 
-            printf("%s",linha2);
-
+        }
+        while(fgets(linha2, 100,open2)!=NULL)
+        {
+            printf("\n%s\t",linha2);
 
         }
 
     }
+
+
+
 
 
 
@@ -50,3 +61,4 @@ int main()
     return 0;
 
 }
+
