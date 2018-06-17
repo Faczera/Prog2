@@ -97,6 +97,7 @@ int main()
 
     fclose(open1);
     fclose(open2);
+    fclose(open3);
 
     return 0;
 
