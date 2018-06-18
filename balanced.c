@@ -1,105 +1,55 @@
 \\Nome Vitor de Souza Luiz, Matricula:0050015264
-
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> 
+#include <string.h>
 
 int main()
 {
 
-    char linha1[100];
-    char arq1[100];
-    char arq2[100];
-    char linha2[100];
-    char cab[100];
-    char name[100];
-    char cab1[100];
-    char name1[100];
-    int coloc;
-    int coloc2;
-
-
-
-
-    FILE *open1;
-    FILE *open2;
-    FILE *open3;
-
+char linha[100];
+char linha2[100];
+char nome1[100];
+char nome2[100];
 
     printf("\nEntre com o nome do arquivo 1:");
-    gets(arq1);
+    gets(nome1);
 
     printf("\nEntre com o nome do arquivo 2:");
-    gets(arq2);
+    gets(nome2);
 
-    open1 = fopen(arq1, "r");
-    open2 = fopen(arq2, "r");
-    open3 = fopen("arq3.txt", "w");
+    FILE *arq1=fopen(nome1, "r");
+    FILE *arq2=fopen(nome2, "r");
+    FILE *arq3=fopen("arq3.txt", "w");
 
-    if(open1==NULL || open2==NULL)
-    {
-        printf("\nError");
-        exit(-1);
-    }
 
-    else
-    {
-        while(fgets(linha1, sizeof(linha1),open1)!=NULL)
-        {
-            printf("\n%s\t",linha1);
 
-        }
-        while(fgets(linha2, sizeof(linha2) ,open2)!=NULL)
-        {
-            printf("\n%s\t",linha2);
+fgets(linha, sizeof(linha),arq1);
+fgets(linha, sizeof(linha),arq1);
+fgets(linha2, sizeof(linha2),arq2);
+fgets(linha2, sizeof(linha2),arq2);
 
-        }
-
-    }
-    while(!feof(open1) && !feof(open2))
+while(!feof(arq1) && !feof(arq2))
 {
+    fgets(linha, sizeof(linha),arq1);
+    fgets(linha2, sizeof(linha2),arq2);
 
-    while(fgets(linha1, sizeof(linha1),open1)!=NULL)
+    if(strcmp(linha, linha2) ==-1)
     {
-    fscanf(open1, "%s %s", cab, name);
-    fscanf(open1, "%d", coloc);
+        fprintf(arq3, "%s\n", linha);
+        fprintf(arq3, "%s\n", linha2);
     }
-
-    while(fgets(linha2, sizeof(linha2) ,open2)!=NULL)
-{
-    fscanf(open2, "%s %s", cab1, name1);
-
-    fscanf(open2, "%d", coloc2);
 }
 
-
-
-
-        if(coloc>coloc2)
-        {
-            fprintf(open3, "%s", arq1);
-
-        }
-
-
-        else
-        {
-            fprintf(open3, "%s", arq2);
-        }
-
-    }
-
-
-
-
-
-
-
-
-    fclose(open1);
-    fclose(open2);
-    fclose(open3);
-
-    return 0;
-
+while(!feof(arq2))
+{
+    fgets(linha2, sizeof(linha2),arq2);
+    fprintf(arq3, "%s\n", linha2);
 }
+
+fclose(arq1);
+fclose(arq2);
+fclose(arq3);
+
+return 0;
+}
+
 
